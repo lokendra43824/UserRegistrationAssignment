@@ -8,7 +8,7 @@ namespace UserRegistration
         static void Main(string[] args)
         {
             //variables
-            string firstName, lastName, emailId, phoneNumber;
+            string firstName, lastName, emailId, phoneNumber, password;
 
             Console.WriteLine("Welcome to user Registration problem");
 
@@ -53,6 +53,16 @@ namespace UserRegistration
             {
                 Console.WriteLine("Please enter valid phone number");
                 phoneNumber = Console.ReadLine();
+
+            }
+
+            Console.WriteLine("Enter your password : ");
+            password = Console.ReadLine();
+
+            while (!(obj.validatePassword(password)))
+            {
+                Console.WriteLine("Please enter valid password");
+                password = Console.ReadLine();
 
             }
 
