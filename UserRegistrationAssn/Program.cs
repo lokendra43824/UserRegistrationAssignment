@@ -8,14 +8,16 @@ namespace UserRegistration
         static void Main(string[] args)
         {
             //variables
-            string firstName, lastName, emailId;
+            string firstName, lastName, emailId, phoneNumber;
 
             Console.WriteLine("Welcome to user Registration problem");
+
+            Validation obj = new Validation();
 
             Console.WriteLine("Enter your first name: ");
             firstName = Console.ReadLine();
 
-            while (!(validateName(firstName)))
+            while (!(obj.validateName(firstName)))
             {
                 Console.WriteLine("Please enter valid first Name ");
                 firstName = Console.ReadLine();
@@ -25,7 +27,7 @@ namespace UserRegistration
             Console.WriteLine("Enter your Last name: ");
             lastName = Console.ReadLine();
 
-            while (!(validateName(lastName)))
+            while (!(obj.validateName(lastName)))
             {
                 Console.WriteLine("Please enter valid last Name ");
                 lastName = Console.ReadLine();
@@ -35,44 +37,29 @@ namespace UserRegistration
             Console.WriteLine("Enter your Email address: ");
             emailId = Console.ReadLine();
 
-            while (!(validateEmailId(emailId)))
+            while (!(obj.validateEmailId(emailId)))
             {
                 Console.WriteLine("Please enter valid Email id ");
                 emailId = Console.ReadLine();
 
             }
 
+
+
+            Console.WriteLine("Enter your phone Number : ");
+            phoneNumber = Console.ReadLine();
+
+            while (!(obj.validatePhoneNumber(phoneNumber)))
+            {
+                Console.WriteLine("Please enter valid phone number");
+                phoneNumber = Console.ReadLine();
+
+            }
+
+
+
         }
 
-        public static bool validateName(string name)
-        {
-            string pattern = @"(^[A-Z]{1}[a-z]{2,}$)";
 
-            Regex re = new Regex(pattern);
-            if (re.IsMatch(name))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-
-        public static bool validateEmailId(string emailId)
-        {
-            string pattern = "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$";
-
-            Regex re = new Regex(pattern);
-            if (re.IsMatch(emailId))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
     }
 }
