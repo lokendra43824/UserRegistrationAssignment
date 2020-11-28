@@ -56,7 +56,8 @@ namespace UserRegistrationAssn
         /// <returns></returns>
         public bool validatePhoneNumber(string phoneNumber)
         {
-            string pattern = "(^[+][1-9]{1,}[0-9\\-]{0,}[ ]{1}[1-9]{1}[0-9]{9}$)");
+            string pattern = "(^[+][1-9]{1,}[0-9\\-]{0,}[ ]{1}[1-9]{1}[0-9]{9}$)";
+
 
             Regex re = new Regex(pattern);
             if (re.IsMatch(phoneNumber))
