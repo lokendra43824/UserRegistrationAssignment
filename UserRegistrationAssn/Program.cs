@@ -3,157 +3,102 @@ using System.Text.RegularExpressions;
 
 namespace UserRegistrationAssn
 {
-    public static void Main(string[] args)
+    class Program
     {
-        //variables
-        string firstName, lastName, emailId, phoneNumber, password;
-
-        Console.WriteLine("Welcome to user Registration problem");
-
-        Validation obj = new Validation();
-        while (true)
+        public string firstName
         {
-            //getting firstName input from user
-            Console.WriteLine("Enter your first name: ");
-            firstName = Console.ReadLine();
-
-            try
-            {
-                //valdating the fisrtName
-                if (!(obj.validate(firstName, "(^[A-Z]{1}[a-z]{2,}$)")))
-                {
-                    // Console.WriteLine("Please enter valid first Name ");
-                    // firstName = Console.ReadLine();
-                    throw new MyException("First name is not in required format....");
-
-                }
-                break;
-            }
-
-            catch (MyException me)
-            {
-                Console.WriteLine(me.Message);
-
-            }
+            get;
+            set;
+        }
+        public string lastName
+        {
+            get;
+            set;
+        }
+        public string emailId
+        {
+            get;
+            set;
+        }
+        public string phoneNumber
+        {
+            get;
+            set;
+        }
+        public string password
+        {
+            get;
+            set;
         }
 
 
-        while (true)
+        static Program obj = new Program();
+
+        /// <summary>
+        /// Validates the fields.
+        /// </summary>
+        /// <param name="propertyName">Name of the property.</param>
+        /// <param name="pattern">The pattern.</param>
+        /// <exception cref="MyException">Invalid " + field.Name + " Entered</exception>
+        static Action<string, string> validateFields = (propertyName, pattern) =>
         {
-            //getting lastName as input from user
-            Console.WriteLine("Enter your Last name: ");
-            lastName = Console.ReadLine();
-
-            try
+            Type type = Type.GetType("UserRegistration.Program");
+            PropertyInfo field = type.GetProperty(propertyName);
+            while (true)
             {
-                //valdating the lastName
-                if (!(obj.validate(lastName, "(^[A-Z]{1}[a-z]{2,}$)")))
+                try
                 {
+                    Console.WriteLine("Enter your " + propertyName);
+                    string value = Console.ReadLine();
+                    field.SetValue(obj, value);
 
-                    // Console.WriteLine("Please enter valid last Name ");
-                    //lastName = Console.ReadLine();
-                    throw new MyException("Last name is not in required format....");
+                    bool isValid = Validation.validate(value, pattern);
+                    //valdating the fisrtName
+                    if (!isValid)
+                    {
 
+
+                        throw new MyException("Invalid " + field.Name + " Entered");
+
+
+                    }
+                    break;
                 }
-                break;
-            }
-
-            catch (MyException me)
-            {
-                Console.WriteLine(me.Message);
+                catch (MyException me)
+                {
+                    Console.WriteLine(me.Message);
+                }
 
             }
+        };
+        /// <summary>
+        /// Defines the entry point of the application.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        static void Main(string[] args)
+        {
 
+
+
+            Console.WriteLine("Welcome to user Registration problem");
+
+
+            validateFields("firstName", "(^[A-Z]{1}[a-z]{2,}$)");
+            validateFields("lastName", "(^[A-Z]{1}[a-z]{2,}$)");
+            validateFields("emailId", "(^[a-zA-Z0-9]{1,}([+-_.][a-zA-Z0-9]{1,}){0,}@[a-zA-Z0-9]{1,}(\\.[a-zA-Z]{1,}){0,1}(\\.[a-zA-Z]{2,})$)");
+            validateFields("phoneNumber", "(^[+[1-9]{1,}[0-9\\-]{0,}[ ]{1}[1-9]{1}[0-9]{9}$)");
+            validateFields("password", "(^(?=.{8,}$)((?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9]*[!@#$^&*()-+=]{1}[a-zA-Z0-9]*))$)");
+
+
+            Console.WriteLine("\nRegistration successful\n");
+
+            Console.WriteLine("First Name :" + obj.firstName);
+            Console.WriteLine("Last Name: " + obj.lastName);
+            Console.WriteLine("Email address :" + obj.emailId);
+            Console.WriteLine("phone number :" + obj.phoneNumber);
+            Console.WriteLine("passord :" + obj.password);
         }
 
 
-        while (true)
-        {
-            //getting EmailAddress as input from user
-            Console.WriteLine("Enter your Email address: ");
-            emailId = Console.ReadLine();
-
-            try
-            {
-                //valdating the EmailAddress
-                if (!(obj.validate(emailId, "(^[a-zA-Z0-9]{1,}([+-_.][a-zA-Z0-9]{1,}){0,}@[a-zA-Z0-9]{1,}(\\.[a-zA-Z]{1,}){0,1}(\\.[a-zA-Z]{2,})$)")))
-                {
-                    // Console.WriteLine("Please enter valid Email id ");
-                    // emailId = Console.ReadLine();
-                    throw new MyException("Email is not in required format....");
-
-                }
-                break;
-            }
-            catch (MyException me)
-            {
-                Console.WriteLine(me.Message);
-
-            }
-
-        }
-
-
-        while (true)
-        {
-            //getting phoneNumber as input from user
-            Console.WriteLine("Enter your phone Number : ");
-            phoneNumber = Console.ReadLine();
-            try
-            {
-                //valdating the phoneNumber
-                if (!(obj.validate(phoneNumber, "(^[+[1-9]{1,}[0-9\\-]{0,}[ ]{1}[1-9]{1}[0-9]{9}$)")))
-                {
-                    // Console.WriteLine("Please enter valid phone number");
-                    //  phoneNumber = Console.ReadLine();
-                    throw new MyException("Phone number is not in required format....");
-
-
-                }
-                break;
-            }
-            catch (MyException me)
-            {
-                Console.WriteLine(me.Message);
-
-            }
-
-        }
-
-
-        while (true)
-        {
-            //getting password as input from user
-            Console.WriteLine("Enter your password : ");
-            password = Console.ReadLine();
-            try
-            {
-                //valdating the password
-                if (!(obj.validate(password, "(^(?=.{8,}$)((?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9]*[!@#$^&*()-+=]{1}[a-zA-Z0-9]*))$)")))
-                {
-                    // Console.WriteLine("Please enter valid password");
-                    // password = Console.ReadLine();
-                    throw new MyException("Password is not in required format....");
-
-                }
-                break;
-            }
-            catch (MyException me)
-            {
-                Console.WriteLine(me.Message);
-
-            }
-
-        }
-
-        Console.WriteLine("\nRegistration successful\n");
-
-        Console.WriteLine("First Name :" + firstName);
-        Console.WriteLine("Last Name: " + lastName);
-        Console.WriteLine("Email address :" + emailId);
-        Console.WriteLine("phone number :" + phoneNumber);
-        Console.WriteLine("passord :" + password);
     }
-
-
 }
