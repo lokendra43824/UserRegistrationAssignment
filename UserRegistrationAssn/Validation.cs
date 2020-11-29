@@ -26,7 +26,8 @@ namespace UserRegistration
 
         public bool validateEmailId(string emailId)
         {
-            string pattern = "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$";
+            string pattern = (@"^([a-z][a-z0-9+_-]\.?[a-z0-9]+@([a-z]([a-z0-9-][a-z])\.)([a-z]([a-z0-9-]*[a-z])\.?)([a-z]{2,3})?)$");
+
 
             Regex re = new Regex(pattern);
             if (re.IsMatch(emailId))
@@ -41,7 +42,7 @@ namespace UserRegistration
 
         public bool validatePhoneNumber(string phoneNumber)
         {
-            string pattern = @"(^[1-9]{1,}[0-9\\-]{0,}[ ]{1}[1-9]{1}[0-9]{9}$)";
+            string pattern = (@"^\+?[0-9]{1,3}\s[0-9]{10}$");
 
             Regex re = new Regex(pattern);
             if (re.IsMatch(phoneNumber))
