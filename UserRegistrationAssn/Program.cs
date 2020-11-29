@@ -62,7 +62,7 @@ namespace UserRegistration
 
         public static bool validateEmailId(string emailId)
         {
-            string pattern = "^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-z]{2,})$";
+            string pattern = (@"^([a-z][a-z0-9+_-]\.?[a-z0-9]+@([a-z]([a-z0-9-][a-z])\.)([a-z]([a-z0-9-]*[a-z])\.?)([a-z]{2,3})?)$");
 
             Regex re = new Regex(pattern);
             if (re.IsMatch(emailId))
