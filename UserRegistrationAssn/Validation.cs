@@ -4,7 +4,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.Schema;
 
-namespace UserRegistrationAssn
+namespace UserRegistration
 {
     public class Validation
     {
@@ -15,7 +15,7 @@ namespace UserRegistrationAssn
         /// <param name="name">The name.</param>
         /// <param name="pattern">The pattern.</param>
         /// <returns></returns>
-        public static Func<string, string, bool> validate = (name, pattern) =>
+        public bool validate(string name, string pattern)
         {
 
             Regex re = new Regex(pattern);
@@ -28,7 +28,7 @@ namespace UserRegistrationAssn
                 return false;
             }
 
-        };
+        }
 
 
 
