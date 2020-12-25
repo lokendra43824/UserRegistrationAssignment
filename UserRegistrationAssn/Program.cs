@@ -1,91 +1,104 @@
 ﻿using System;
+using System.Reflection;
 using System.Text.RegularExpressions;
+
 
 namespace UserRegistrationAssn
 {
     class Program
     {
+        public string firstName
+        {
+            get;
+            set;
+        }
+        public string lastName
+        {
+            get;
+            set;
+        }
+        public string emailId
+        {
+            get;
+            set;
+        }
+        public string phoneNumber
+        {
+            get;
+            set;
+        }
+        public string password
+        {
+            get;
+            set;
+        }
+
+
+        static Program obj = new Program();
+
+        /// <summary>
+        /// Validates the fields.
+        /// </summary>
+        /// <param name="propertyName">Name of the property.</param>
+        /// <param name="pattern">The pattern.</param>
+        /// <exception cref="MyException">Invalid " + field.Name + " Entered</exception>
+        static Action<string, string> validateFields = (propertyName, pattern) =>
+        {
+            Type type = Type.GetType("UserRegistration.Program");
+            PropertyInfo field = type.GetProperty(propertyName);
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Enter your " + propertyName);
+                    string value = Console.ReadLine();
+                    field.SetValue(obj, value);
+
+                    bool isValid = Validation.validate(value, pattern);
+                    //valdating the fisrtName
+                    if (!isValid)
+                    {
+
+
+                        throw new MyException("Invalid " + field.Name + " Entered");
+
+
+                    }
+                    break;
+                }
+                catch (MyException me)
+                {
+                    Console.WriteLine(me.Message);
+                }
+
+            }
+        };
         /// <summary>
         /// Defines the entry point of the application.
         /// </summary>
         /// <param name="args">The arguments.</param>
         static void Main(string[] args)
         {
-            //variables
-            string firstName, lastName, emailId, phoneNumber, password;
+
+
 
             Console.WriteLine("Welcome to user Registration problem");
 
-            Validation obj = new Validation();
 
-            //getting firstName input from user
-            Console.WriteLine("Enter your first name: ");
-            firstName = Console.ReadLine();
-
-            //valdating the fisrtName
-            while (!(obj.validateName(firstName)))
-            {
-                Console.WriteLine("Please enter valid first Name ");
-                firstName = Console.ReadLine();
-
-            }
+            validateFields("firstName", "(^[A-Z]{1}[a-z]{2,}$)");
+            validateFields("lastName", "(^[A-Z]{1}[a-z]{2,}$)");
+            validateFields("emailId", "(^[a-zA-Z0-9]{1,}([+-_.][a-zA-Z0-9]{1,}){0,}@[a-zA-Z0-9]{1,}(\\.[a-zA-Z]{1,}){0,1}(\\.[a-zA-Z]{2,})$)");
+            validateFields("phoneNumber", "(^[+[1-9]{1,}[0-9\\-]{0,}[ ]{1}[1-9]{1}[0-9]{9}$)");
+            validateFields("password", "(^(?=.{8,}$)((?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9]*[!@#$^&*()-+=]{1}[a-zA-Z0-9]*))$)");
 
 
-            //getting lastName as input from user
-            Console.WriteLine("Enter your Last name: ");
-            lastName = Console.ReadLine();
+            Console.WriteLine("\nRegistration successful\n");
 
-            //valdating the lastName
-            while (!(obj.validateName(lastName)))
-            {
-                Console.WriteLine("Please enter valid last Name ");
-                lastName = Console.ReadLine();
-
-            }
-
-
-            //getting EmailAddress as input from user
-            Console.WriteLine("Enter your Email address: ");
-            emailId = Console.ReadLine();
-
-            //valdating the EmailAddress
-            while (!(obj.validateEmailId(emailId)))
-            {
-                Console.WriteLine("Please enter valid Email id ");
-                emailId = Console.ReadLine();
-
-            }
-
-
-
-            //getting phoneNumber as input from user
-            Console.WriteLine("Enter your phone Number : ");
-            phoneNumber = Console.ReadLine();
-
-            //valdating the phoneNumber
-            while (!(obj.validatePhoneNumber(phoneNumber)))
-            {
-                Console.WriteLine("Please enter valid phone number");
-                phoneNumber = Console.ReadLine();
-
-            }
-
-
-
-            //getting password as input from user
-            Console.WriteLine("Enter your password : ");
-            password = Console.ReadLine();
-
-            //valdating the password
-            while (!(obj.validatePassword(password)))
-            {
-                Console.WriteLine("Please enter valid password");
-                password = Console.ReadLine();
-
-            }
-
-            Console.WriteLine("Registration successful");
-
+            Console.WriteLine("First Name :" + obj.firstName);
+            Console.WriteLine("Last Name: " + obj.lastName);
+            Console.WriteLine("Email address :" + obj.emailId);
+            Console.WriteLine("phone number :" + obj.phoneNumber);
+            Console.WriteLine("passord :" + obj.password);
         }
 
 

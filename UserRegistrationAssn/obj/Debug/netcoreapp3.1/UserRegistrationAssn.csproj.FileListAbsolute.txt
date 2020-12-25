@@ -7,7 +7,14 @@ C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationA
 C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\obj\Debug\netcoreapp3.1\UserRegistrationAssn.csprojAssemblyReference.cache
 C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\obj\Debug\netcoreapp3.1\UserRegistrationAssn.AssemblyInfoInputs.cache
 C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\obj\Debug\netcoreapp3.1\UserRegistrationAssn.AssemblyInfo.cs
-C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\obj\Debug\netcoreapp3.1\UserRegistrationAssn.csproj.CoreCompileInputs.cache
 C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\obj\Debug\netcoreapp3.1\UserRegistrationAssn.dll
 C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\obj\Debug\netcoreapp3.1\UserRegistrationAssn.pdb
 C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\obj\Debug\netcoreapp3.1\UserRegistrationAssn.genruntimeconfig.cache
+C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\obj\Debug\netcoreapp3.1\UserRegistrationAssn.csproj.CoreCompileInputs.cache
+C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\UserRegistrationAssn\obj\Debug\netcoreapp3.1\UserRegistrationAssn.csproj.CopyComplete

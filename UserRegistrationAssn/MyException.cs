@@ -4,7 +4,12 @@ using System.Text;
 
 namespace UserRegistrationAssn
 {
-    class MyException
+    class MyException : ApplicationException
     {
+        public MyException(string message) : base(message)
+        {
+
+        }
+
     }
 }
