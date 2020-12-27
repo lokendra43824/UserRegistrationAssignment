@@ -1,5 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using UserRegistration;
+using UserRegistrationAssn;
+
 namespace MyTestClass
 {
     [TestClass]
