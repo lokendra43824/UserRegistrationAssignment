@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace UserRegistrationAssn
+namespace UserRegistration
 {
     public class Validation
     {
@@ -36,8 +36,9 @@ namespace UserRegistrationAssn
         /// <returns></returns>
         public bool validateEmailId(string emailId)
         {
-            string pattern = (@"^([a-z][a-z0-9+_-]\.?[a-z0-9]+@([a-z]([a-z0-9-][a-z])\.)([a-z]([a-z0-9-]*[a-z])\.?)([a-z]{2,3})?)$");
 
+
+            string pattern = "(^[a-zA-Z0-9]{1,}([+-_.][a-zA-Z0-9]{1,}){0,}@[a-zA-Z0-9]{1,}(\\.[a-zA-Z]{1,}){0,1}(\\.[a-zA-Z]{2,})$)";
             Regex re = new Regex(pattern);
             if (re.IsMatch(emailId))
             {
@@ -56,8 +57,7 @@ namespace UserRegistrationAssn
         /// <returns></returns>
         public bool validatePhoneNumber(string phoneNumber)
         {
-            string pattern = "(^[+][1-9]{1,}[0-9\\-]{0,}[ ]{1}[1-9]{1}[0-9]{9}$)";
-
+            string pattern = @"(^[+[1-9]{1,}[0-9\\-]{0,}[ ]{1}[1-9]{1}[0-9]{9}$)";
 
             Regex re = new Regex(pattern);
             if (re.IsMatch(phoneNumber))
