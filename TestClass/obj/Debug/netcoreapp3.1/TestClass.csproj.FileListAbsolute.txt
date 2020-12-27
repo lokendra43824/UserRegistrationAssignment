@@ -91,3 +91,7 @@ C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\TestClass\obj\Deb
 C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\TestClass\obj\Debug\netcoreapp3.1\TestClass.AssemblyInfo.cs
 C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\TestClass\obj\Debug\netcoreapp3.1\TestClass.csproj.CopyComplete
 C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\TestClass\obj\Debug\netcoreapp3.1\TestClass.genruntimeconfig.cache
+C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\TestClass\bin\Debug\netcoreapp3.1\TestClass.pdb
+C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\TestClass\obj\Debug\netcoreapp3.1\TestClass.csproj.CoreCompileInputs.cache
+C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\TestClass\obj\Debug\netcoreapp3.1\TestClass.dll
+C:\Users\NAGENDRA AND JANAKI\source\repos\UserRegistrationAssn\TestClass\obj\Debug\netcoreapp3.1\TestClass.pdb
