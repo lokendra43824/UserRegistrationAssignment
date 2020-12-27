@@ -2,21 +2,36 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Xml.Schema;
 
 namespace UserRegistrationAssn
 {
-    public bool Validate(string name, string pattern)
+    public class Validation
     {
 
-        Regex re = new Regex(pattern);
-        if (re.IsMatch(name))
+        /// <summary>
+        /// Validates the specified name.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="pattern">The pattern.</param>
+        /// <returns></returns>
+        public bool validate(string name, string pattern)
         {
-            return true;
+
+            Regex re = new Regex(pattern);
+            if (re.IsMatch(name))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
-        else
-        {
-            return false;
-        }
+
+
+
 
     }
 }

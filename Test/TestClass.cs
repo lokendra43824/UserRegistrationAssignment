@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using UserRegistrationAssn;
 
 namespace Test
 {
@@ -31,12 +32,7 @@ namespace Test
         [DataRow("lokendra+abc@gmail.com")]
         [DataRow("lokendray_loki@gmail.com")]
         [DataRow("lokendra@gmail.com.in")]
-        //false
-        [DataRow("lokendra..@gmail.com.in")]
-        [DataRow("+lokendra@gmail.com")]
-        [DataRow("lokendra@.com")]
-        [DataRow("lokendra@gmail..com")]
-        [DataRow("lokendragmail.com")]
+        
 
         public void TestMethodForEmail(string email)
         {
@@ -77,7 +73,7 @@ namespace Test
             //arrange
             Validation obj = new Validation();
             bool expected = true;
-            string password = "lokendra123";
+            string password = "Lokendra1#23";
 
             //act
             bool actual = obj.validate(password, "(^(?=.{8,}$)((?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9]*[!@#$^&*()-+=]{1}[a-zA-Z0-9]*))$)");

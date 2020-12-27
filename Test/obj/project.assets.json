@@ -1634,6 +1634,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "UserRegistrationAssn/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/UserRegistrationAssn.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UserRegistrationAssn.dll": {}
+        }
       }
     }
   },
@@ -5705,6 +5715,11 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "UserRegistrationAssn/1.0.0": {
+      "type": "project",
+      "path": "../UserRegistrationAssn/UserRegistrationAssn.csproj",
+      "msbuildProject": "../UserRegistrationAssn/UserRegistrationAssn.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5712,6 +5727,7 @@
       "MSTest.TestAdapter >= 2.1.0",
       "MSTest.TestFramework >= 2.1.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
+      "UserRegistrationAssn >= 1.0.0",
       "coverlet.collector >= 1.2.0"
     ]
   },
@@ -5740,7 +5756,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\NAGENDRA AND JANAKI\\source\\repos\\UserRegistrationAssn\\UserRegistrationAssn\\UserRegistrationAssn.csproj": {
+              "projectPath": "C:\\Users\\NAGENDRA AND JANAKI\\source\\repos\\UserRegistrationAssn\\UserRegistrationAssn\\UserRegistrationAssn.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
